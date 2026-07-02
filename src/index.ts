@@ -194,7 +194,7 @@ export default function bun(
         }
 
         await generateStaticManifest(
-          clientDir.pathname,
+          fileURLToPath(clientDir),
           adapterDir,
           config.build.assets,
           serializedRouteHeaders,
