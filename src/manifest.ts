@@ -1,8 +1,13 @@
 import { createHash } from "node:crypto";
 import { readdir, readFile, writeFile } from "node:fs/promises";
-import { join, relative } from "node:path";
+import { join, relative, sep } from "node:path";
 import { lookup } from "mrmime";
 import type { ManifestEntry, StaticManifest } from "./types.ts";
+
+/** Return the relative path between two directories that covers Win/POSIX support. */
+function getRelativePath(clientDir: string, filePath: string): string {
+  return relative(clientDir, filePath).split(sep).join("/")
+}
 
 /** Return the appropriate Cache-Control header — immutable for Vite-hashed assets, configurable otherwise. */
 function getCacheControl(
@@ -77,7 +82,7 @@ export async function generateStaticManifest(
         .update(content)
         .digest("hex")
         .slice(0, 16);
-      const pathname = `/${relative(clientDir, filePath)}`;
+      const pathname = `/${getRelativePath(clientDir, filePath)}`;
       const contentType = lookup(filePath);
 
       // Build via the Headers API so case variants (e.g. a `content-type` from
@@ -111,7 +116,7 @@ export async function generateStaticManifest(
 
       const entry: ManifestEntry = {
         headers,
-        filePath: relative(clientDir, filePath),
+        filePath: getRelativePath(clientDir, filePath),
       };
       return [pathname, entry] as const;
     })
@@ -124,7 +129,7 @@ export async function generateStaticManifest(
     // to the static file (e.g. /about/index.html) without falling through to SSR.
     const route = filePathToRoute(pathname);
     if (route !== pathname) {
-      manifest[route] = { ...entry, filePath: pathname.slice(1) };
+      manifest[route] = { ...entry, filePath: entry.filePath };
     }
   }
 
