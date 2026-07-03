@@ -19,6 +19,50 @@
 
 * add on-demand ISR cache expiration API ([a659f5c](https://github.com/wyattjoh/astro-bun-adapter/commit/a659f5c6974590105403209ff05626c14422fd34))
 
+## [2.1.0](https://github.com/27rogi/astro-bun-adapter/compare/astro-bun-adapter-v2.1.0...astro-bun-adapter-v2.1.0) (2026-07-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* replace semantic-release with release-please
+* Requires Astro 6. The adapter API has changed from createExports()/start() to top-level module execution with createApp().
+
+### Features
+
+* add `staticCacheControl` config option for non-hashed static assets ([7a59cbd](https://github.com/27rogi/astro-bun-adapter/commit/7a59cbdfae5469fd52578b4472dc0eed8b55a0da))
+* add ISR support, biome/husky tooling, and CI checks ([2461f5d](https://github.com/27rogi/astro-bun-adapter/commit/2461f5dc7923db588b581ec8286050a95345aa12))
+* add on-demand ISR cache expiration API ([a659f5c](https://github.com/27rogi/astro-bun-adapter/commit/a659f5c6974590105403209ff05626c14422fd34))
+* add structured debug logging via debug package ([f9555da](https://github.com/27rogi/astro-bun-adapter/commit/f9555dae614eeb678d3004fef8527ba598ac38c2))
+* add x-astro-cache header to all response types ([de6ab7f](https://github.com/27rogi/astro-bun-adapter/commit/de6ab7ff58b0d1639a35ecd18a2637c6c180bab4))
+* initial astro bun adapter implementation ([387905f](https://github.com/27rogi/astro-bun-adapter/commit/387905f29f71a51ca5fe7a591e166844717396e5))
+* **isr:** add ISR caching for image endpoint responses ([9b10244](https://github.com/27rogi/astro-bun-adapter/commit/9b1024432178fce69ab703f8b2bf7ab459ee96ae))
+* **isr:** add two-tier disk-backed LRU cache with CBOR serialization ([0fce4ed](https://github.com/27rogi/astro-bun-adapter/commit/0fce4edcfe6022f04ac043b34d0369c7e085ba71))
+* **isr:** make memory cache pre-fill opt-in ([2ec2f1d](https://github.com/27rogi/astro-bun-adapter/commit/2ec2f1d35c66fa24e25d2bfca17ae20d766df02f))
+* migrate to Astro 6 adapter API ([a2d147a](https://github.com/27rogi/astro-bun-adapter/commit/a2d147ac3f66b8dbb1db73a9eefeb73104de0663))
+* serve pre-rendered pages via static file route aliases ([2e07a18](https://github.com/27rogi/astro-bun-adapter/commit/2e07a1878a46acf4ea917f3ce6f1e1fdb2bc2027))
+
+
+### Bug Fixes
+
+* add PR CI triggers, build step, and release-please permissions ([484a997](https://github.com/27rogi/astro-bun-adapter/commit/484a9970783f1116461c432ef9413175f79cd2ef))
+* address code review issues in server and ISR cache ([594bf64](https://github.com/27rogi/astro-bun-adapter/commit/594bf64b36ff701de2b11b28de84019668cb7fa7))
+* canonicalize static manifest headers to avoid duplicates ([e367e45](https://github.com/27rogi/astro-bun-adapter/commit/e367e4576b21f2ad7f40e1f7bded1945b9788f34))
+* correct base path handling for server islands and image endpoint ([1328aea](https://github.com/27rogi/astro-bun-adapter/commit/1328aea8f9f3ec6d12e90369df1e186c36adc184))
+* defer ISR cacheDir default to server runtime ([963719a](https://github.com/27rogi/astro-bun-adapter/commit/963719ab5c36d5904e06eb9c531606eb21e78ca6))
+* externalize virtual module import in bunup build config ([306049a](https://github.com/27rogi/astro-bun-adapter/commit/306049a7735f2e6a3a910cac47d7f671a9efb1bb))
+* use fileURLToPath instead of .pathname ([d26e1b6](https://github.com/27rogi/astro-bun-adapter/commit/d26e1b63b7fbd0aafb3c7cef338f9d3ed1a2de82))
+* use modified relative fun to support win32 paths ([71591e3](https://github.com/27rogi/astro-bun-adapter/commit/71591e3984d3945616c3e65d98b94a7b6d213426))
+
+
+### Miscellaneous
+
+* cut 2.1.0 release ([#9](https://github.com/27rogi/astro-bun-adapter/issues/9)) ([679488d](https://github.com/27rogi/astro-bun-adapter/commit/679488d28f106a2c48a59a3761ada2de73f5deb7))
+
+
+### CI
+
+* replace semantic-release with release-please ([bb56000](https://github.com/27rogi/astro-bun-adapter/commit/bb56000c26004ed8a1fc92e81a25e5e849fd1c87))
+
 ## [2.1.0](https://github.com/wyattjoh/astro-bun-adapter/compare/astro-bun-adapter-v2.0.1...astro-bun-adapter-v2.1.0) (2026-05-12)
 
 
