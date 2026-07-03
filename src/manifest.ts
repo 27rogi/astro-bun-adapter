@@ -6,7 +6,7 @@ import type { ManifestEntry, StaticManifest } from "./types.ts";
 
 /** Return the relative path between two directories that covers Win/POSIX support. */
 function getRelativePath(clientDir: string, filePath: string): string {
-  return relative(clientDir, filePath).split(sep).join("/")
+  return relative(clientDir, filePath).split(sep).join("/");
 }
 
 /** Return the appropriate Cache-Control header — immutable for Vite-hashed assets, configurable otherwise. */
