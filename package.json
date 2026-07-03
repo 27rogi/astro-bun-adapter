@@ -1,5 +1,5 @@
 {
-  "name": "@wyattjoh/astro-bun-adapter",
+  "name": "@27rogi/astro-bun-adapter",
   "version": "2.1.0",
   "description": "Astro adapter for Bun with optimized static file serving and ISR support",
   "type": "module",
@@ -7,11 +7,11 @@
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wyattjoh/astro-bun-adapter.git"
+    "url": "https://github.com/27rogi/astro-bun-adapter.git"
   },
-  "homepage": "https://github.com/wyattjoh/astro-bun-adapter#readme",
+  "homepage": "https://github.com/27rogi/astro-bun-adapter#readme",
   "bugs": {
-    "url": "https://github.com/wyattjoh/astro-bun-adapter/issues"
+    "url": "https://github.com/27rogi/astro-bun-adapter/issues"
   },
   "publishConfig": {
     "access": "public",
